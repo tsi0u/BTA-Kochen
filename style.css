@@ -1,16 +1,37 @@
-* { box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
-html {font-family:Arial, Helvetica, sans-serif;
-width:100%; line-height: 1.4; color: #000; background-color: #ffffff;}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  line-height: 1.4;
+  color: #000;
+  background-color: #ffffff;
+}
 
 /*alle Links sind schwarz, fett, Großbuchstaben, nicht unterstrichen*/
-a {color: #000; font-weight: bold; text-transform: uppercase; text-decoration: none}
+a {
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
 
-body {margin: 0;}
+body {
+  margin: 0;
+}
 
 /* Liste ohne Bulletpoints*/
 
-ul {list-style-type: none; margin: 0; padding: 0;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 /*Button weißer Hintergrund und kein Rahmen*/
-button {background-color:#ffffff; border-width: 0cm;}
+button {
+  background-color: #ffffff;
+  border-width: 0cm;
+}
