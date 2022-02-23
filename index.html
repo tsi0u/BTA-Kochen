@@ -12,12 +12,16 @@
       <a href="index.html"
         ><img src="img/logo.png" alt="BTA kochen" height="40px"
       /></a>
+
       <!-- jetzt kommt der Button-->
-      <button><img src="img/menu.svg" alt="Menu" height="40px" /></button>
+      <button id="menu-button">
+        <img src="img/menu.svg" alt="Menu" height="40px" />
+      </button>
 
       <!--jetzt kommt die Navigatiooon-->
-      <nav>
-        <ul>
+      <nav id="menu-oben">
+        <!--bei kleinen Bildschirmen ausblenden-->
+        <ul id="menu-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="#">Rezepte</a></li>
           <li><a href="#">Kategorien</a></li>
@@ -25,12 +29,120 @@
         </ul>
       </nav>
     </header>
+    <script src="js/menu.js"></script>
 
-    <img src="../img/intro.jpg" alt="Pizzakarton" width="100%" />
-    <h1>BTA Kochen</h1>
-    <h2>die besten Rezepte für Webworker</h2>
-
-    <img src="../img/burger.jpg" alt="Burger auf Teller" />
-    <button>Entdecke die Leckereien</button>
+    <main>
+      <section id="hero">
+        <!-- <img src="../img/intro.jpg" alt="Pizzakarton" width="100%" /> besser über CSS als Hintergrundbild einbauen-->
+        <div>
+          <!--eingebaut, damit die Flexbox nicht auf die Kinder auswirkt-->
+          <h1>Der beste heiße Scheiss</h1>
+          <p>
+            finde heraus, was dein Hackschnitzel mit dem Klimawandel zu tun hat
+          </p>
+          <a href="#" class="button">SHOW ME THE FOOD</a>
+        </div>
+      </section>
+      <!-- Rezepte-Sektion-->
+      <section id="recipes">
+        <h2>geiler Food-Shizzle</h2>
+        <div class="row">
+          <!--Karton, um die Flexbox reinzutun-->
+          <!--1. Karte-->
+          <div class="card">
+            <img src="img/burger.jpg" alt="besorgte Burger" />
+            <h3>Voll toller Bio-Burger</h3>
+            <p>
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker
+            </p>
+            <a href="#" class="button blue">eat me, i'm vegan <3</a>
+          </div>
+          <!--2. Karte-->
+          <div class="card">
+            <img src="img/burger.jpg" alt="besorgte Burger" />
+            <h3>Voll toller Bio-Burger</h3>
+            <p>
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker
+            </p>
+            <a href="#" class="button blue">eat me, i'm vegan <3</a>
+          </div>
+          <!--3. Karte-->
+          <div class="card">
+            <img src="img/burger.jpg" alt="besorgte Burger" />
+            <h3>Voll toller Bio-Burger</h3>
+            <p>
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker
+            </p>
+            <a href="#" class="button blue">eat me, i'm vegan <3</a>
+          </div>
+          <!--4. Karte-->
+          <div class="card">
+            <img src="img/burger.jpg" alt="besorgte Burger" />
+            <h3>Voll toller Bio-Burger</h3>
+            <p>
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker lecker lecker lecker lecker lecker lecker lecker
+              lecker lecker
+            </p>
+            <a href="#" class="button blue">eat me, i'm vegan <3</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--jetzt kommt der Nebencontent, kommt nach dem Hauptteil-->
+    <aside id="newsletter">
+      <h2>Nix mehr verpassen</h2>
+      <p>Hol dir den Newsletter</p>
+      <form action="">
+        <input type="email" name="E-Mail" id="email" /><button type="submit">
+          Submit
+        </button>
+      </form>
+    </aside>
+    <!--Footer-->
+    <footer>
+      <!--in den Footer kommen 2 navs rein, da unabhängig voneinander-->
+      <nav id="menu-unten-links">
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav id="menu-unten-rechts">
+        <ul>
+          <li>
+            <a
+              href="https://wordpress.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="img/wordpress.svg" width="32px" height="32px" alt="Wordpress"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="img/twitter.svg" alt="Twitter"></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="img/instagram.svg" alt="Insta"></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>

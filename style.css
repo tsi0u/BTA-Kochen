@@ -8,6 +8,7 @@ html {
   line-height: 1.4;
   color: #000;
   background-color: #ffffff;
+  /*font-size legt root-Schriftgröße fest; Standard ist 16px;*/
 }
 
 /*alle Links sind schwarz, fett, Großbuchstaben, nicht unterstrichen*/
@@ -19,7 +20,7 @@ a {
 }
 
 body {
-  margin: 0;
+  margin: 0; /*Standardmäßig 8px (Potenzen von 2 sind immer gut)*/
 }
 
 /* Liste ohne Bulletpoints*/
@@ -31,7 +32,161 @@ ul {
 }
 
 /*Button weißer Hintergrund und kein Rahmen*/
-button {
+#menu-button {
   background-color: #ffffff;
   border-width: 0cm;
+}
+
+header {
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+/*Navigation ausblenden*/
+#menu-oben {
+  display: none; /*zeige dich nicht*/
+}
+/*Navigation einblenden, wenn Klasse show angehängt wird -- in Java*/
+#menu-oben.show {
+  /*"wenn das Element die ID menu-oben hat UND die Klasse show, dann...*/
+  display: block;
+}
+#hero {
+  background-image: url(img/intro.jpg); /*wird schlecht von Google erkannt*/
+  height: 100vh; /*viewport height=Displaygröße*/
+  background-position: center; /*zeig mir die Mitte vom Bild*/
+  background-repeat: no-repeat;
+  background-size: cover; /*setzt sich optimal rein wie ein Plattencover*/
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  /*Normalzustand*/
+  border-style: solid;
+  border-width: 1px;
+  border-color: #374a67;
+  background-color: white;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: normal;
+  border-radius: 5px;
+  box-shadow: 2px 2px;
+  color: #374a67;
+  display: inline-block;
+  transition: all 0.4s; /*Übergang zwischen 2 Zuständen (:) */
+}
+/*Selektor für Mouse over */
+.button:hover {
+  background-color: #374a67;
+  color: white;
+}
+a:hover {
+  background-color: aqua;
+  color: fuchsia;
+}
+.button.blue /*alle Elemente mit Klasse button UND blue*/ {
+  background-color: #374a67;
+  color: white;
+}
+
+.button.blue:hover {
+  background-color: white;
+  color: #374a67;
+}
+
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+.card {
+  margin: 16px;
+  padding-bottom: 20px;
+  box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.6); /*shift right, shift down, spread, blur, opacity*/
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  overflow: hidden; /*Überlauf (in dem Fall das Bild) soll abgeknipst werden*/
+}
+
+/*responsive Bilder gestalten*/
+
+.card p,
+.card h3 {
+  padding: 10px;
+} /*Alle Karten-Elemente außer Bild kriegen padding*/
+
+.card img /*-->alle Bilder, die in einer Karte sind*/ {
+  max-width: 100%; /*100% vom Elternteil*/
+}
+
+#newsletter {
+  background-color: #07244e;
+  color: #ffffff;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  padding-bottom: 20px;
+}
+aside {
+  padding: 20px;
+}
+
+#menu-unten-links ul /*elemente (impressum&co) werden nur im kleinen Bildschirm untereinander und zentriert angezeigt--> siehe media query*/ {
+  text-align: center;
+  align-items: center;
+}
+
+#menu-unten-rechts ul /*elemente (icons) werden immer nebeneinander angezeigt*/ {
+  display: flex;
+  justify-content: center;
+  text-align:center;
+  flex: row;
+}
+
+footer {
+  padding: 20px;
+} /*footer-menus werden eingerückt*/
+
+li:not(#menu-links-unten li) /*alle lis, ausser den lis in menu links unten*/{
+  padding: 10px;
+}
+
+/*Medienumbruch großer Bildschirm*/
+@media (min-width: 1024px /*alternative Angabe --> min-width: 64rem, weil 1024/16*/) {
+  #menu-oben {
+    display: block;
+  }
+#menu-list {display: flex;}
+
+  #menu-button {
+    display: none;
+  } /*Menubutton wird im großen Bildschirm ausgeblendet*/
+
+  footer /*zeigt die beiden navs (Kinder) nebeneinander an*/ {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  #menu-unten-links ul /*zeigt die Elemente des linken navs im großen Bildschirm nebeneinander an*/ {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row; /*ist eh Standard*/
+  }
+
+ 
+  .row /*die Karten (bzw. alles in Klasse row) werden aufm Großbildschirm nebeneinander angezeigt -- könnte man auch dem Header und Footer geben*/ {
+    display: flex;
+  }
 }
